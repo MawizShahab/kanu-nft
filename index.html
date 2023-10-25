@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <!-- Bootstrap 4.5.2 -->
+    <link rel="stylesheet" href="./css/kainu.css" />
+    <link rel="stylesheet" href="./css/custom-font.css" />
+    <!-- Your custom CSS file -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <!-- Font Awesome Library -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Bootstrap 4.5.2 js files -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(window).scroll(function () {
+        //Fade-in-up
+        $(window).scroll(function () {
+          $(".fade-in-up").each(function () {
+            var point = "0px",
+              move = "50px";
+
+            if (isScrolledIntoView($(this))) {
+              $(this).css({
+                opacity: 1,
+                visibility: "visible",
+                "-webkit-transform": "translateY(" + point + ")",
+                transform: "translateY(" + point + ")",
+              });
+            } else {
+              $(this).css({
+                opacity: 0,
+                visibility: "hidden",
+                "-webkit-transform": "translateY(" + move + ")",
+                transform: "translateY(" + move + ")",
+              });
+            }
+          });
+          //Fade-in-left
+          $(".fade-in-left").each(function () {
+            var point = "0px",
+              move = "-50px";
+
+            if (isScrolledIntoViewLeft($(this))) {
+              $(this).css({
+                opacity: 1,
+                visibility: "visible",
+                "-webkit-transform": "translateX(" + point + ")",
+                transform: "translateX(" + point + ")",
+              });
+            } else {
+              $(this).css({
+                opacity: 0,
+                visibility: "hidden",
+                "-webkit-transform": "translateX(" + move + ")",
+                transform: "translateX(" + move + ")",
+              });
+            }
+          });
+          //Fade-in-right
+          $(".fade-in-right").each(function () {
+            var point = "0px",
+              side = "50px";
+
+            if (isScrolledIntoView($(this))) {
+              $(this).css({
+                opacity: 1,
+                visibility: "visible",
+                "-webkit-transform": "translateX(" + point + ")",
+                transform: "translateX(" + point + ")",
+              });
+            } else {
+              $(this).css({
+                opacity: 0,
+                visibility: "hidden",
+                "-webkit-transform": "translateX(" + side + ")",
+                transform: "translateX(" + side + ")",
+              });
+            }
+          });
+        });
+      });
+
+      function isScrolledIntoView(elem) {
+        var $elem = $(elem);
+        var $window = $(window);
+
+        var docViewTop = $window.scrollTop();
+        var docViewBottom = docViewTop + $window.height();
+
+        var elemTop = $elem.offset().top;
+        var elemBottom = elemTop + $elem.height();
+
+        // Adjust the condition to check if the element is within the section's boundaries
+        return elemTop <= docViewBottom && elemBottom >= docViewTop;
+      }
+      function isScrolledIntoViewLeft(elem) {
+        var $elem = $(elem);
+        var $window = $(window);
+
+        var docViewTop = $window.scrollTop();
+        var docViewBottom = docViewTop + $window.height();
+
+        var elemTop = $elem.offset().top;
+        var elemBottom = elemTop + $elem.height();
+
+        return elemBottom <= docViewBottom && elemTop >= docViewTop;
+      }
+      function isScrolledIntoViewRight(elem) {
+        var $elem = $(elem);
+        var $window = $(window);
+
+        var docViewTop = $window.scrollTop();
+        var docViewBottom = docViewTop + $window.height();
+
+        var elemTop = $elem.offset().top;
+        var elemBottom = elemTop + $elem.height();
+
+        return elemBottom <= docViewBottom && elemTop >= docViewTop;
+      }
+    </script>
+    <title>KAINU</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+          <img src="./images/header-logo.png" alt="Logo" width="100" />
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Collapsible Mobile Menu -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#">GAMING</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">TOKENOMICS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">WHITEPAPER</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">ROADMAP</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">TEAM</a>
+            </li>
+          </ul>
+
+          <form class="form-inline my-2 my-lg-0 search-bar">
+            <i class="fas fa-search"></i>
+            <input
+              class="form-control ml-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+          </form>
+        </div>
+      </nav>
+    </header>
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container-fluid">
+        <!-- Activity Categories -->
+        <div class="activity-categories">
+          <a href="#" class="activity-category">HOME</a>
+          <a href="#" class="activity-category">PC GAMES</a>
+          <a href="#" class="activity-category">BATTLEFIELD</a>
+          <a href="#" class="activity-category">FAN PAGE</a>
+          <a href="#" class="activity-category">TOURNAMENT</a>
+        </div>
+
+        <!-- Hero Images and Buttons -->
+        <div class="hero-images">
+          <!-- First Image -->
+          <img src="./images/left-hero.png" alt="Image 1" />
+
+          <!-- Second Image -->
+          <div class="hero-center">
+            <img src="./images/hero-center.png" alt="Image 2" />
+            <!-- Buttons -->
+            <div class="hero-buttons">
+              <button class="btn btn-kainu-primary">
+                <!-- <i class="fas fa-shopping-cart"></i> -->
+                <img src="./images/icons/Play.png" alt="play" />
+                BUY THEME
+              </button>
+              <button class="btn btn-kainu-secondary">
+                <!-- <i class="fas fa-users"></i>  -->
+                MEET US
+                <img src="./images/icons/Right arrow.png" alt="play" />
+              </button>
+            </div>
+          </div>
+
+          <!-- Third Image -->
+          <img src="./images/hero-right.png" alt="Image 3" />
+        </div>
+      </div>
+    </section>
+    <!-- Signup Section -->
+    <section class="signup-section">
+      <div class="container">
+        <!-- Title -->
+        <div class="signup-title">
+          <span class="purple-text">SIGN UP</span> FOR TOURNAMENT NOW!
+        </div>
+
+        <!-- Buttons -->
+        <div class="signup-buttons">
+          <button class="btn btn-kainu-primary">Go to tournament</button>
+        </div>
+
+        <!-- Image -->
+        <div class="signup-image">
+          <iframe
+            width="1000"
+            height="500"
+            src="https://www.youtube.com/embed/D0UnqGm_miA?si=5rNlWwLMoiIyGjOq"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <!-- <div class="signup-image">
+          <img src="./images/sign-up-hero.png" alt="Tournament Image" />
+        </div> -->
+
+        <!-- More Buttons -->
+        <div class="signup-buttons">
+          <button class="btn btn-kainu-primary">
+            <!-- <i class="fas fa-users"></i> -->
+            <img src="./images/icons/go-to-tournament.png" alt="play" />
+            Go to tournament
+          </button>
+          <button class="btn btn-kainu-secondary">
+            <!-- <i class="fas fa-arrow-right"></i>  -->
+            Button
+            <img src="./images/icons/Right arrow.png" alt="play" />
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- Team Section -->
+    <section class="team-section">
+      <div class="container-fluid">
+        <!-- Title -->
+        <div class="team-title">
+          <p>MEET OUR TEAMS</p>
+          <p class="purple-text">
+            <span style="color: #fff">THE "</span>NINJA SQUAD<span
+              style="color: #fff"
+              >"</span
+            >
+          </p>
+        </div>
+
+        <!-- Cards (4 cards per row on larger screens) -->
+        <div class="row fade-in-up">
+          <div class="col-md-3 col-sm-6 card-container">
+            <div class="team-card">
+              <div class="team-image">
+                <div class="badge">TEAM PROFILE</div>
+                <img src="/images/Profile1.png" alt="Team 1" />
+              </div>
+              <div class="name-points">
+                <div class="name">ANDREAS NOACK</div>
+                <div class="points">
+                  <small><span class="purple-text">2488</span> points</small>
+                </div>
+              </div>
+              <div class="info">
+                <div class="no-of-players">5 players</div>
+                <div class="match-played">
+                  <small
+                    ><span class="purple-text">30</span> MATCHES PLAYED</small
+                  >
+                </div>
+              </div>
+              <div class="winning-next">
+                <div class="winning-streak">
+                  <div class="winning-streak-label">WINNING STREAK</div>
+                  <div>
+                    <div class="winning-streak-line win"></div>
+                    <div class="winning-streak-line lost"></div>
+                    <div class="winning-streak-line win"></div>
+                    <div class="winning-streak-line win"></div>
+                    <div class="winning-streak-line win"></div>
+                    <div class="winning-streak-line lost"></div>
+                    <div class="winning-streak-line lost"></div>
+                    <div class="winning-streak-line win"></div>
+                  </div>
+                </div>
+                <div class="next-match">
+                  <div class="next-match-label">NEXT MATCH</div>
+                  <div class="match-date">01/09</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 card-container">
+            <div class="team-card">
+              <div class="team-image">
+                <div class="badge">TEAM PROFILE</div>
+                <img src="/images/Profile2.png" alt="Team 1" />
+              </div>
+              <div class="name-points">
+                <div class="name">ANDREAS NOACK</div>
+                <div class="points">
+                  <small><span class="purple-text">2488</span> points</small>
+                </div>
+              </div>
+              <div class="info">
+                <div class="no-of-players">5 players</div>
+                <div class="match-played">
+                  <small
+                    ><span class="purple-text">30</span> MATCHES PLAYED</small
+                  >
+                </div>
+              </div>
+              <div class="winning-next">
+                <div class="winning-streak">
+                  <div class="winning-streak-label">WINNING STREAK</div>
+                  <div>
+                    <div class="winning-streak-line win"></div>
+                    <div class="winning-streak-line lost"></div>
+                    <div class="winning-streak-line win"></div>
+                    <div class="winning-streak-line win"></div>
+                    <div class="winning-streak-line win"></div>
+                    <div class="winning-streak-line lost"></div>
+                    <div class="winning-streak-line lost"></div>
+                    <div class="winning-streak-line win"></div>
+                  </div>
+                </div>
+                <div class="next-match">
+                  <div class="next-match-label">NEXT MATCH</div>
+                  <div class="match-date">01/09</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 card-container">
+            <div class="team-card">
+              <div class="team-image">
+                <div class="badge">TEAM PROFILE</div>
+                <img src="/images/Profile1.png" alt="Team 1" />
+              </div>
+              <div class="name-points">
+                <div class="name">ANDREAS NOACK</div>
+                <div class="points">
+                  <small><span class="purple-text">2488</span> points</small>
+                </div>
+              </div>
+              <div class="info">
+                <div class="no-of-players">5 players</div>
+                <div class="match-played">
+                  <small
+                    ><span class="purple-text">30</span> MATCHES PLAYED</small
+                  >
+                </div>
+              </div>
+              <div class="winning-next">
+                <div class="winning-streak">
+                  <div class="winning-streak-label">WINNING STREAK</div>
+                  <div>
+                    <div class="winning-streak-line win"></div>
+                    <div class="winning-streak-line lost"></div>
+                    <div class="winning-streak-line win"></div>
+                    <div class="winning-streak-line win"></div>
+                    <div class="winning-streak-line win"></div>
+                    <div class="winning-streak-line lost"></div>
+                    <div class="winning-streak-line lost"></div>
+                    <div class="winning-streak-line win"></div>
+                  </div>
+                </div>
+                <div class="next-match">
+                  <div class="next-match-label">NEXT MATCH</div>
+                  <div class="match-date">01/09</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 card-container">
+            <div class="team-card">
+              <div class="team-image">
+                <div class="badge">TEAM PROFILE</div>
+                <img src="/images/Profile2.png" alt="Team 1" />
+              </div>
+              <div class="name-points">
+                <div class="name">ANDREAS NOACK</div>
+                <div class="points">
+                  <small><span class="purple-text">2488</span> points</small>
+                </div>
+              </div>
+              <div class="info">
+                <div class="no-of-players">5 players</div>
+                <div class="match-played">
+                  <small
+                    ><span class="purple-text">30</span> MATCHES PLAYED</small
+                  >
+                </div>
+              </div>
+              <div class="winning-next">
+                <div class="winning-streak">
+                  <div class="winning-streak-label">WINNING STREAK</div>
+                  <div>
+                    <div class="winning-streak-line win"></div>
+                    <div class="winning-streak-line lost"></div>
+                    <div class="winning-streak-line win"></div>
+                    <div class="winning-streak-line win"></div>
+                    <div class="winning-streak-line win"></div>
+                    <div class="winning-streak-line lost"></div>
+                    <div class="winning-streak-line lost"></div>
+                    <div class="winning-streak-line win"></div>
+                  </div>
+                </div>
+                <div class="next-match">
+                  <div class="next-match-label">NEXT MATCH</div>
+                  <div class="match-date">01/09</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 card-container">
+            <div class="team-card">
+              <div class="team-image">
+                <div class="badge">TEAM PROFILE</div>
+                <img src="/images/Profile2.png" alt="Team 1" />
+              </div>
+              <div class="name-points">
+                <div class="name">ANDREAS NOACK</div>
+                <div class="points">
+                  <small><span class="purple-text">2488</span> points</small>
+                </div>
+              </div>
+              <div class="info">
+                <div class="no-of-players">5 players</div>
+                <div class="match-played">
+                  <small
+                    ><span class="purple-text">30</span> MATCHES PLAYED</small
+                  >
+                </div>
+              </div>
+              <div class="winning-next">
+                <div class="winning-streak">
+                  <div class="winning-streak-label">WINNING STREAK</div>
+                  <div>
+                    <div class="winning-streak-line win"></div>
+                    <div class="winning-streak-line lost"></div>
+                    <div class="winning-streak-line win"></div>
+                    <div class="winning-streak-line win"></div>
+                    <div class="winning-streak-line win"></div>
+                    <div class="winning-streak-line lost"></div>
+                    <div class="winning-streak-line lost"></div>
+                    <div class="winning-streak-line win"></div>
+                  </div>
+                </div>
+                <div class="next-match">
+                  <div class="next-match-label">NEXT MATCH</div>
+                  <div class="match-date">01/09</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 card-container">
+            <div class="team-card">
+              <div class="team-image">
+                <div class="badge">TEAM PROFILE</div>
+                <img src="/images/Profile3.png" alt="Team 1" />
+              </div>
+              <div class="name-points">
+                <div class="name">ANDREAS NOACK</div>
+                <div class="points">
+                  <small><span class="purple-text">2488</span> points</small>
+                </div>
+              </div>
+              <div class="info">
+                <div class="no-of-players">5 players</div>
+                <div class="match-played">
+                  <small
+                    ><span class="purple-text">30</span> MATCHES PLAYED</small
+                  >
+                </div>
+              </div>
+              <div class="winning-next">
+                <div class="winning-streak">
+                  <div class="winning-streak-label">WINNING STREAK</div>
+                  <div>
+                    <div class="winning-streak-line win"></div>
+                    <div class="winning-streak-line lost"></div>
+                    <div class="winning-streak-line win"></div>
+                    <div class="winning-streak-line win"></div>
+                    <div class="winning-streak-line win"></div>
+                    <div class="winning-streak-line lost"></div>
+                    <div class="winning-streak-line lost"></div>
+                    <div class="winning-streak-line win"></div>
+                  </div>
+                </div>
+                <div class="next-match">
+                  <div class="next-match-label">NEXT MATCH</div>
+                  <div class="match-date">01/09</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 card-container">
+            <div class="team-card">
+              <div class="team-image">
+                <div class="badge">TEAM PROFILE</div>
+                <img src="/images/Profile2.png" alt="Team 1" />
+              </div>
+              <div class="name-points">
+                <div class="name">ANDREAS NOACK</div>
+                <div class="points">
+                  <small><span class="purple-text">2488</span> points</small>
+                </div>
+              </div>
+              <div class="info">
+                <div class="no-of-players">5 players</div>
+                <div class="match-played">
+                  <small
+                    ><span class="purple-text">30</span> MATCHES PLAYED</small
+                  >
+                </div>
+              </div>
+              <div class="winning-next">
+                <div class="winning-streak">
+                  <div class="winning-streak-label">WINNING STREAK</div>
+                  <div>
+                    <div class="winning-streak-line win"></div>
+                    <div class="winning-streak-line lost"></div>
+                    <div class="winning-streak-line win"></div>
+                    <div class="winning-streak-line win"></div>
+                    <div class="winning-streak-line win"></div>
+                    <div class="winning-streak-line lost"></div>
+                    <div class="winning-streak-line lost"></div>
+                    <div class="winning-streak-line win"></div>
+                  </div>
+                </div>
+                <div class="next-match">
+                  <div class="next-match-label">NEXT MATCH</div>
+                  <div class="match-date">01/09</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 card-container">
+            <div class="team-card">
+              <div class="team-image">
+                <div class="badge">TEAM PROFILE</div>
+                <img src="/images/Profile1.png" alt="Team 1" />
+              </div>
+              <div class="name-points">
+                <div class="name">ANDREAS NOACK</div>
+                <div class="points">
+                  <small><span class="purple-text">2488</span> points</small>
+                </div>
+              </div>
+              <div class="info">
+                <div class="no-of-players">5 players</div>
+                <div class="match-played">
+                  <small
+                    ><span class="purple-text">30</span> MATCHES PLAYED</small
+                  >
+                </div>
+              </div>
+              <div class="winning-next">
+                <div class="winning-streak">
+                  <div class="winning-streak-label">WINNING STREAK</div>
+                  <div>
+                    <div class="winning-streak-line win"></div>
+                    <div class="winning-streak-line lost"></div>
+                    <div class="winning-streak-line win"></div>
+                    <div class="winning-streak-line win"></div>
+                    <div class="winning-streak-line win"></div>
+                    <div class="winning-streak-line lost"></div>
+                    <div class="winning-streak-line lost"></div>
+                    <div class="winning-streak-line win"></div>
+                  </div>
+                </div>
+                <div class="next-match">
+                  <div class="next-match-label">NEXT MATCH</div>
+                  <div class="match-date">01/09</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Add more cards here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Players Section -->
+    <section class="players-section">
+      <div class="container-fluid">
+        <!-- Title -->
+        <div class="team-title">
+          <p>MEET OUR PLAYERS</p>
+          <p class="purple-text">
+            <span style="color: #fff">THE "</span>NINJA SQUAD<span
+              style="color: #fff"
+              >"</span
+            >
+          </p>
+        </div>
+
+        <!-- Testimonials (2 testimonials per row on small screens, 4 testimonials per row on larger screens) -->
+        <div class="row fade-in-up">
+          <div class="col-md-3 col-sm-6 card-container">
+            <div class="testimonial-card">
+              <img src="/images/player.png" alt="Player 1" />
+              <div class="player-name">ANDREAS NOACK</div>
+              <div class="team-info">
+                <div class="team">TEAM</div>
+                <div class="team-name">USWORDFISH</div>
+              </div>
+              <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-discord"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 card-container">
+            <div class="testimonial-card">
+              <img src="/images/player.png" alt="Player 1" />
+              <div class="player-name">ANDREAS NOACK</div>
+              <div class="team-info">
+                <div class="team">TEAM</div>
+                <div class="team-name">USWORDFISH</div>
+              </div>
+              <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-discord"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 card-container">
+            <div class="testimonial-card">
+              <img src="/images/player.png" alt="Player 1" />
+              <div class="player-name">ANDREAS NOACK</div>
+              <div class="team-info">
+                <div class="team">TEAM</div>
+                <div class="team-name">USWORDFISH</div>
+              </div>
+              <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-discord"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 card-container">
+            <div class="testimonial-card">
+              <img src="/images/player.png" alt="Player 1" />
+              <div class="player-name">ANDREAS NOACK</div>
+              <div class="team-info">
+                <div class="team">TEAM</div>
+                <div class="team-name">USWORDFISH</div>
+              </div>
+              <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-discord"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 card-container">
+            <div class="testimonial-card">
+              <img src="/images/player.png" alt="Player 1" />
+              <div class="player-name">ANDREAS NOACK</div>
+              <div class="team-info">
+                <div class="team">TEAM</div>
+                <div class="team-name">USWORDFISH</div>
+              </div>
+              <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-discord"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 card-container">
+            <div class="testimonial-card">
+              <img src="/images/player.png" alt="Player 1" />
+              <div class="player-name">ANDREAS NOACK</div>
+              <div class="team-info">
+                <div class="team">TEAM</div>
+                <div class="team-name">USWORDFISH</div>
+              </div>
+              <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-discord"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 card-container">
+            <div class="testimonial-card">
+              <img src="/images/player.png" alt="Player 1" />
+              <div class="player-name">ANDREAS NOACK</div>
+              <div class="team-info">
+                <div class="team">TEAM</div>
+                <div class="team-name">USWORDFISH</div>
+              </div>
+              <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-discord"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 card-container">
+            <div class="testimonial-card">
+              <img src="/images/player.png" alt="Player 1" />
+              <div class="player-name">ANDREAS NOACK</div>
+              <div class="team-info">
+                <div class="team">TEAM</div>
+                <div class="team-name">USWORDFISH</div>
+              </div>
+              <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-discord"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Add more testimonials here -->
+        </div>
+      </div>
+    </section>
+    <!-- Sponsors Section -->
+    <section class="sponsors-section">
+      <div class="container-fluid">
+        <div class="sponser-title">SPONSORS</div>
+        <div class="row sponsers fade-in-up">
+          <!-- Sponsor Containers -->
+          <div class="col-md-2 card-container">
+            <div class="sponsor-container">
+              <img src="./images/sponsers/xfinity.png" alt="xfinity" />
+              <img
+                src="/images/sponsers/xfinity-inner.png"
+                alt="xfinity"
+                class="logo-image"
+              />
+            </div>
+          </div>
+          <div class="col-md-2 card-container">
+            <div class="sponsor-container">
+              <img src="/images/sponsers/ey.png" alt="ey" />
+              <img
+                src="/images/sponsers/ey-inner.png"
+                alt="ey"
+                class="logo-image"
+              />
+            </div>
+          </div>
+          <div class="col-md-2 card-container">
+            <div class="sponsor-container">
+              <img src="/images/sponsers/disney.png" alt="disney" />
+              <img
+                src="/images/sponsers/disney-inner.png"
+                alt="disney"
+                class="logo-image"
+              />
+            </div>
+          </div>
+          <div class="col-md-2 card-container">
+            <div class="sponsor-container">
+              <img src="/images/sponsers/unknown.png" alt="unknown" />
+              <img
+                src="/images/sponsers/unknown-inner.png"
+                alt="unknown"
+                class="logo-image"
+              />
+            </div>
+          </div>
+          <div class="col-md-2 card-container">
+            <div class="sponsor-container">
+              <img src="/images/sponsers/cisco.png" alt="cisco" />
+              <img
+                src="/images/sponsers/cisco-inner.png"
+                alt="cisco"
+                class="logo-image"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Contact Us Section -->
+    <section class="contact-us-section">
+      <div class="container-fluid">
+        <div class="row justify-content-center contact-us-container">
+          <div class="col-md-6 card-container fade-in-left">
+            <!-- Title -->
+            <div class="team-title">
+              <p class="purple-text">
+                CONTACT US<span class="contact-desc" style="color: #fff">
+                  WE LOOK FORWARDED</span
+                >
+              </p>
+              <p class="contact-desc">
+                TO HEARING FROM YOU!, POTENTIAL SPONSORSHIPS,
+              </p>
+              <p class="contact-desc">AND TEAM ADMISSION REQUESTS</p>
+              <button class="btn btn-kainu-primary contact">CONTACT US</button>
+            </div>
+          </div>
+          <!-- Contact Form Section -->
+          <div class="col-md-6 card-container fade-in-right">
+            <div class="contact-form">
+              <form>
+                <div class="form-group mb-1 row">
+                  <label class="form-label col-sm-2" for="name">NAME</label>
+                  <div class="col-sm-10 form-input">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="name"
+                      placeholder="Enter your name"
+                    />
+                  </div>
+                </div>
+                <div class="form-group mb-1 row">
+                  <label class="form-label col-sm-2" for="email">EMAIL</label>
+                  <div class="col-sm-10 form-input">
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="email"
+                      placeholder="Enter your email"
+                    />
+                  </div>
+                </div>
+                <div class="form-group mb-5 row">
+                  <label class="form-label label-comment col-sm-2" for="comment"
+                    >YOUR MESSAGE</label
+                  >
+                  <div class="col-sm-10 form-input">
+                    <textarea
+                      class="form-control"
+                      id="comment"
+                      placeholder="Germany/Berlin..."
+                    ></textarea>
+                  </div>
+                </div>
+                <div class="form-group mb-3 row">
+                  <label class="col-sm-2" for="comment"></label>
+                  <div class="col-sm-10 form-input">
+                    <button
+                      type="submit"
+                      class="btn btn-kainu-primary submit-button"
+                    >
+                      SUBMIT MESSAGE
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div bis_skin_checked="1">
+        <div class="footer-top-wrap" bis_skin_checked="1">
+          <div class="footer-logo-wrap" bis_skin_checked="1">
+            <div class="footer-logo" bis_skin_checked="1">
+              <img src="/images/footer-logo.png" alt="Logo" />
+            </div>
+            <div class="footer-social" bis_skin_checked="1">
+              <ul>
+                <li>
+                  <a
+                    href="https://www.facebook.com/"
+                    target="_blank"
+                    rel="noreferrer"
+                    ><svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 512 512"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"
+                      ></path></svg
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="https://instagram.com/"
+                    target="_blank"
+                    rel="noreferrer"
+                    ><svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 1024 1024"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M512 378.7c-73.4 0-133.3 59.9-133.3 133.3S438.6 645.3 512 645.3 645.3 585.4 645.3 512 585.4 378.7 512 378.7zM911.8 512c0-55.2.5-109.9-2.6-165-3.1-64-17.7-120.8-64.5-167.6-46.9-46.9-103.6-61.4-167.6-64.5-55.2-3.1-109.9-2.6-165-2.6-55.2 0-109.9-.5-165 2.6-64 3.1-120.8 17.7-167.6 64.5C132.6 226.3 118.1 283 115 347c-3.1 55.2-2.6 109.9-2.6 165s-.5 109.9 2.6 165c3.1 64 17.7 120.8 64.5 167.6 46.9 46.9 103.6 61.4 167.6 64.5 55.2 3.1 109.9 2.6 165 2.6 55.2 0 109.9.5 165-2.6 64-3.1 120.8-17.7 167.6-64.5 46.9-46.9 61.4-103.6 64.5-167.6 3.2-55.1 2.6-109.8 2.6-165zM512 717.1c-113.5 0-205.1-91.6-205.1-205.1S398.5 306.9 512 306.9 717.1 398.5 717.1 512 625.5 717.1 512 717.1zm213.5-370.7c-26.5 0-47.9-21.4-47.9-47.9s21.4-47.9 47.9-47.9 47.9 21.4 47.9 47.9a47.84 47.84 0 0 1-47.9 47.9z"
+                      ></path></svg
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="https://twitter.com/"
+                    target="_blank"
+                    rel="noreferrer"
+                    ><svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 1024 1024"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm215.3 337.7c.3 4.7.3 9.6.3 14.4 0 146.8-111.8 315.9-316.1 315.9-63 0-121.4-18.3-170.6-49.8 9 1 17.6 1.4 26.8 1.4 52 0 99.8-17.6 137.9-47.4-48.8-1-89.8-33-103.8-77 17.1 2.5 32.5 2.5 50.1-2a111 111 0 0 1-88.9-109v-1.4c14.7 8.3 32 13.4 50.1 14.1a111.13 111.13 0 0 1-49.5-92.4c0-20.7 5.4-39.6 15.1-56a315.28 315.28 0 0 0 229 116.1C492 353.1 548.4 292 616.2 292c32 0 60.8 13.4 81.1 35 25.1-4.7 49.1-14.1 70.5-26.7-8.3 25.7-25.7 47.4-48.8 61.1 22.4-2.4 44-8.6 64-17.3-15.1 22.2-34 41.9-55.7 57.6z"
+                      ></path></svg
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.discord.gg/"
+                    target="_blank"
+                    rel="noreferrer"
+                    ><svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 24 24"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M9.593 10.971c-.542 0-.969.475-.969 1.055 0 .578.437 1.055.969 1.055.541 0 .968-.477.968-1.055.011-.581-.427-1.055-.968-1.055zm3.468 0c-.542 0-.969.475-.969 1.055 0 .578.437 1.055.969 1.055.541 0 .968-.477.968-1.055-.001-.581-.427-1.055-.968-1.055z"
+                      ></path>
+                      <path
+                        d="M17.678 3H4.947A1.952 1.952 0 0 0 3 4.957v12.844c0 1.083.874 1.957 1.947 1.957H15.72l-.505-1.759 1.217 1.131 1.149 1.064L19.625 22V4.957A1.952 1.952 0 0 0 17.678 3zM14.01 15.407s-.342-.408-.626-.771c1.244-.352 1.719-1.13 1.719-1.13-.39.256-.76.438-1.093.562a6.679 6.679 0 0 1-3.838.398 7.944 7.944 0 0 1-1.396-.41 5.402 5.402 0 0 1-.693-.321c-.029-.021-.057-.029-.085-.048a.117.117 0 0 1-.039-.03c-.171-.094-.266-.16-.266-.16s.456.76 1.663 1.121c-.285.36-.637.789-.637.789-2.099-.067-2.896-1.444-2.896-1.444 0-3.059 1.368-5.538 1.368-5.538 1.368-1.027 2.669-.998 2.669-.998l.095.114c-1.71.495-2.499 1.245-2.499 1.245s.21-.114.561-.275c1.016-.446 1.823-.57 2.156-.599.057-.009.105-.019.162-.019a7.756 7.756 0 0 1 4.778.893s-.751-.712-2.366-1.206l.133-.152s1.302-.029 2.669.998c0 0 1.368 2.479 1.368 5.538 0-.001-.807 1.376-2.907 1.443z"
+                      ></path></svg
+                  ></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-widget-wrap" bis_skin_checked="1">
+            <div class="widget newsletter fade-in-left" bis_skin_checked="1">
+              <h5 class="fw-title">Don't miss our latest news</h5>
+              <div class="footer-newsletter" bis_skin_checked="1">
+                <form name="submit-to-google-sheet">
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Email Address"
+                  /><button
+                    type="submit"
+                    data-aos="fade-right"
+                    data-aos-duration="500"
+                    class="aos-init aos-animate"
+                  >
+                    Subscribe
+                  </button>
+                </form>
+              </div>
+              <div class="footer-desc" bis_skin_checked="1">
+                <h6 class="desc-title">
+                  Gamia is a project from <span>INOVATION inc.</span>
+                </h6>
+                <p>
+                  Nothing on this website constitutes financial advice, and it
+                  is always recommended to consult a qualified financial advisor
+                  before participating in any token or NFT purchases.
+                </p>
+              </div>
+            </div>
+            <div class="widget" bis_skin_checked="1">
+              <h5 class="fw-title">Products</h5>
+              <ul class="footer-menu">
+                <li>
+                  <a href="#" target="_blank" rel="noreferrer">Pancakeswap</a>
+                </li>
+                <li>
+                  <a href="#" target="_blank" rel="noreferrer">Whitepaper</a>
+                </li>
+                <li>
+                  <a href="#" target="_blank" rel="noreferrer">Roadmap</a>
+                </li>
+                <li>
+                  <a href="#" target="_blank" rel="noreferrer">Tokenomics</a>
+                </li>
+                <li><a href="/faq">FAQ</a></li>
+              </ul>
+            </div>
+            <div class="widget" bis_skin_checked="1">
+              <h5 class="fw-title">need help?</h5>
+              <ul class="footer-menu">
+                <li><a href="# ">Contact Us</a></li>
+                <li>
+                  <a href="#" target="_blank" rel="noreferrer">Discord</a>
+                </li>
+                <li><a href="#" target="_blank" rel="noreferrer">Medium</a></li>
+                <li><a href="#" target="_blank" rel="noreferrer">Reddit</a></li>
+                <li><a href="# ">ChainVision Games</a></li>
+              </ul>
+            </div>
+            <div class="widget fade-in-right" bis_skin_checked="1">
+              <h5 class="fw-title">Latest Posts</h5>
+              <div class="footer-rc-post" bis_skin_checked="1">
+                <div
+                  class="footer-rc-post-item aos-init aos-animate"
+                  data-aos="fade-left"
+                  data-aos-duration="500"
+                  bis_skin_checked="1"
+                >
+                  <div class="rc-post-thumb" bis_skin_checked="1">
+                    <a href="#" target="_blank" rel="noreferrer"
+                      ><img src="/images/Post1.png" alt=""
+                    /></a>
+                  </div>
+                  <div class="rc-post-content" bis_skin_checked="1">
+                    <span class="date">19 May 2023</span>
+                    <h5 class="title">
+                      <a target="_blank" rel="noreferrer" href="#"
+                        >Every video game release soon for xbox series x|s
+                        and...</a
+                      >
+                    </h5>
+                  </div>
+                </div>
+                <div
+                  class="footer-rc-post-item aos-init aos-animate"
+                  data-aos="fade-left"
+                  data-aos-duration="500"
+                  bis_skin_checked="1"
+                >
+                  <div class="rc-post-thumb" bis_skin_checked="1">
+                    <a href="#" target="_blank" rel="noreferrer"
+                      ><img src="/images/Post2.png" alt=""
+                    /></a>
+                  </div>
+                  <div class="rc-post-content" bis_skin_checked="1">
+                    <span class="date">19 May 2023</span>
+                    <h5 class="title">
+                      <a href="#" target="_blank" rel="noreferrer"
+                        >Monster hunter rise: sunbreak bug can delete your
+                        crafting...</a
+                      >
+                    </h5>
+                  </div>
+                </div>
+                <div
+                  class="footer-rc-post-item aos-init aos-animate"
+                  data-aos="fade-left"
+                  data-aos-duration="500"
+                  bis_skin_checked="1"
+                >
+                  <div class="rc-post-thumb" bis_skin_checked="1">
+                    <a href="#" target="_blank" rel="noreferrer"
+                      ><img src="/images/Post3.png" alt=""
+                    /></a>
+                  </div>
+                  <div class="rc-post-content" bis_skin_checked="1">
+                    <span class="date">19 May 2023</span>
+                    <h5 class="title">
+                      <a href="#" target="_blank" rel="noreferrer"
+                        >Metaverse launches new era of our modern Game...</a
+                      >
+                    </h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="copyright-wrap text-center" bis_skin_checked="1">
+          <ul>
+            <li><a>Privacy</a></li>
+            <li><a>Terms of Service</a></li>
+            <li><a>Cookies Policy</a></li>
+          </ul>
+          <p>© 2023 Gamia All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
